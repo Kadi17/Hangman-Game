@@ -65,6 +65,13 @@ img{
     width: 100vw;
     height: 100vh;
 }
+
+.loseWarm h4{
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+}
+
 .loseWarm.show{
     display: flex;
 }
@@ -81,6 +88,11 @@ img{
     top: 0;
     width: 100vw;
     height: 100vh;
+}
+.winWarm h4{
+    color: black;
+    text-align: center;
+    font-size: 2rem;
 }
 .winWarm.show{
     display: flex;

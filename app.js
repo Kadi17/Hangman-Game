@@ -29,6 +29,7 @@ const words = [
 const lettersWrapper = document.querySelector(".letters");
 const hangmanImg = document.querySelector("img.img");
 let letters;
+let word;
 let lettersElements = [];
 let hangmanState = 0;
 let guessedLetters = 0;
@@ -37,11 +38,14 @@ init();
 
 function init(){
     lettersBtn();
-    letters = generateLetters();
+    data = generateLetters();
+    letters = data.letters;
+    word = data.word;
 }
 
 function lettersBtn(){
     buttons = document.querySelectorAll(".btns button");
+    
     for (let index = 0; index < buttons.length; index++) {
         const button = buttons[index];
         button.addEventListener("click", function checkLetter(){
@@ -56,6 +60,9 @@ function lettersBtn(){
                     if (guessedLetters === letters.length){
                         document.querySelector('.winWarm').classList.toggle('show');
                         document.querySelector('.container').classList.toggle('show');
+                        const correctWord = document.querySelector(".winWarm h4");
+                        correctWord.innerText = "Szukane słowo to: " + word;
+                        
                         for (let index = 0; index < buttons.length; index++) {
                             const button = buttons[index];
                             button.disabled = true;
@@ -71,6 +78,8 @@ function lettersBtn(){
                     console.log("koniec")
                     document.querySelector('.loseWarm').classList.toggle('show');
                     document.querySelector('.container').classList.toggle('show');
+                    const correctWord = document.querySelector(".loseWarm h4");
+                    correctWord.innerText = "Szukane słowo to: " + word;
                     for (let index = 0; index < buttons.length; index++) {
                         const button = buttons[index];
                         button.disabled = true;
@@ -95,7 +104,8 @@ function generateLetters(){
         lettersWrapper.appendChild(letterElement);
         lettersElements.push(letterElement);
     }
-    return letters
+    return {"letters": letters,
+            "word": word};
 }
 
 
