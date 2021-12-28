@@ -6,6 +6,7 @@
     font-family: 'Poppins', sans-serif;
 }
 .container{
+    background-color: tomato;
     display: flex;
     flex-flow: column;
     align-items: center;
