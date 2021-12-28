@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap);
+:root{
+    font-size: 62.5%;
+}
 *{
     margin: 0;
     padding: 0;
@@ -6,10 +9,13 @@
     font-family: 'Poppins', sans-serif;
 }
 .container{
-    background-color: tomato;
+    
     display: flex;
     flex-flow: column;
     align-items: center;
+}
+h1{
+    font-size: 3rem;
 }
 .letters{
     display: flex;
@@ -41,13 +47,14 @@
 } */
 
 img{
-    max-width: 100vw;
+    max-width: 50vw;
     min-width: 300px;
     margin: 10px;
     
 }
 .loseWarm{
-    
+    color: red;
+    font-size: 4rem;
     display: none;
     justify-content: center;
     align-items: center;
@@ -63,7 +70,8 @@ img{
 }
 
 .winWarm{
-    
+    color: rgb(9, 202, 9);
+    font-size: 4rem;
     display: none;
     justify-content: center;
     align-items: center;
@@ -80,4 +88,7 @@ img{
 
 .container.show{
     filter: blur(2px);  
+}
+p{
+    font-size: 2rem;
 }

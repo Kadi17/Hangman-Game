@@ -2,7 +2,28 @@ const words = [
     "pies",
     "konstantynopolitańczykowianeczka",
     "brzęczyszczykiewicz",
-    "pszczyna"
+    "pszczyna",
+    "czarny",
+    "informacja",
+    "południowy",
+    "odkryć",
+    "edukacja",
+    "choroba",
+    "budżet",
+    "północ",
+    "wschód",
+    "dobry",
+    "bank",
+    "nadzieja",
+    "teren",
+    "jednak",
+    "zostać",
+    "kontyntynuj",
+    "bar",
+    "republikański",
+    "środowiskowy",
+    "nauczyciel",
+    "strzelać"
 
  ]
 const lettersWrapper = document.querySelector(".letters");
@@ -35,6 +56,11 @@ function lettersBtn(){
                     if (guessedLetters === letters.length){
                         document.querySelector('.winWarm').classList.toggle('show');
                         document.querySelector('.container').classList.toggle('show');
+                        for (let index = 0; index < buttons.length; index++) {
+                            const button = buttons[index];
+                            button.disabled = true;
+                            
+                        }
                         break;
                     }
                 }
